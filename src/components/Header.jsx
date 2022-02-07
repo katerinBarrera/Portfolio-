@@ -102,8 +102,8 @@ const Header = () => {
   //--------------------finish typed animation---------------------------------------
   return (
     <div>
-      <div className="bg-[#c0a0c3] w-screen sm:bg-black md:bg-red-800 lg:bg-pink-200 ">
-        <div className="text-2xl grid place-content-center sm:text-3xl w-screen text-gray-700 font-[Alice] py-6 space-y-3 sm:justify-around sm:flex   ">
+      <div className="bg-[#c0a0c3] w-screen  ">
+        <div className="text-2xl grid place-content-center sm:text-3xl w-screen text-gray-700 font-[Alice] py-6 space-y-3 sm:justify-around sm:flex  ">
           <div className="flex items-center justify-center bg-white box-border h-30 w-max p-6 rounded-md  drop-shadow-lg  ">
             <h2>
               Hola, soy Katerin!
