@@ -232,8 +232,8 @@ const Index = () => {
           </div>
         </div>
         {/* ------------- third part-------------- */}
-        <div className="border-t-4 mx-10 border-dashed  ">
-          <div className="flex  place-content-between">
+        <div className="border-t-4 mx-10 border-dashed flex  sm:place-content-around ">
+          <div className="flex  sm:place-content-around">
             <div className="mt-4">
               <label className="text-4xl font-black ">SKILLS</label>
               {/* -----------2.1------------- */}
