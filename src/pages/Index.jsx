@@ -24,11 +24,13 @@ import { useState } from "react";
 import Slide from "@mui/material/Slide";
 
 const Index = () => {
+  // contain function of projects and cards
   const FullCard = () => {
     const [project1, setProject1] = useState(false);
     const [project2, setProject2] = useState(false);
     const [project3, setProject3] = useState(false);
 
+    // contains all projects information
     const Projects = ({}) => {
       const Project1 = () => {
         return <div>hola soy el primer proyecto</div>;
@@ -55,10 +57,10 @@ const Index = () => {
         </div>
       );
     };
-
+    // contains all the card of every project, and the principal dialog, it shows the projects informations
     const CardSituation = () => {
       const [showDialogProject1, setShowDialogProject1] = useState(false);
-
+      // principal dialog
       const ProjectDialog = () => {
         const Transition = React.forwardRef(function Transition(props, ref) {
           return <Slide direction="up" ref={ref} {...props} />;
@@ -93,7 +95,7 @@ const Index = () => {
       };
 
       return (
-        <div className="flex place-content-around">
+        <div className="sm:flex sm:place-content-around grid  place-content-center">
           <Card sx={{ maxWidth: 345 }} className="my-8">
             <CardMedia
               component="img"
@@ -209,14 +211,16 @@ const Index = () => {
       {/* ----------------------body------------- */}
       <div className="flex flex-col">
         {/* -------------first part-------------- */}
-        <div className=" flex items-center">
-          <img
-            src={uno}
-            className="p-4 ml-6 my-4 w-auto h-auto"
-            alt="welcome"
-          />
+        <div className=" sm:flex items-center grid place-content-center">
+          <div className="grid place-content-center ">
+            <img
+              src={uno}
+              className="p-4 ml-6 my-4 w-[320px] h-auto sm:w-[350px] sm:h-auto  md:w-[450px] md:h-auto lg:w-[604px] lg:h-auto text-center"
+              alt="welcome"
+            />
+          </div>
           <div className="m-4 ">
-            <span className="text-gray-700 text-4xl font-extrabold">
+            <span className="text-gray-700 text-xl sm:text-3-xl lg:text-4xl font-extrabold">
               HOLAAAAAAAAAAA SOY KATERINN <br /> AQUÍ PONGO LO SE ME DE LA
               GANAAAA
             </span>
@@ -231,99 +235,109 @@ const Index = () => {
         </div>
         {/* ------------- third part-------------- */}
         <div className="border-t-4 mx-10 border-dashed  ">
-          <div className="flex  place-content-between">
-            <div className="mt-4">
+          <div className="  grid place-content-center md:flex  sm:place-content-between">
+            <div className="mt-4 grid place-content-center">
               <label className="text-4xl font-black ">SKILLS</label>
               {/* -----------2.1------------- */}
-              <div className="m-4 flex flex-auto">
-                <div className="m-4 flex flex-col  text-center items-center space-y-2">
-                  <img
-                    className=" w-auto h-20 justify-end"
-                    src={react}
-                    alt="react"
-                  />
-                  <label>React</label>
+              <div className="m-4 sm:flex sm:flex-auto grid place-content-center justify-center">
+                <div className="flex items-center">
+                  <div className="m-4 flex flex-col text-center items-center space-y-2">
+                    <img
+                      className=" w-max h-auto sm:w-auto sm:h-20 justify-end"
+                      src={giticon}
+                      alt="git"
+                    />
+                    <label>Git</label>
+                  </div>
+                  <div className="m-4  flex flex-col text-center items-center space-y-2">
+                    <img
+                      className=" w-max h-auto sm:w-auto sm:h-20 justify-end"
+                      src={html1}
+                      alt="html5"
+                    />
+                    <label>HTML5</label>
+                  </div>
+                  <div className="m-4 flex flex-col text-center items-center space-y-2">
+                    <img
+                      className=" w-max h-auto sm:w-auto sm:h-20 justify-end"
+                      src={css3}
+                      alt="css3"
+                    />
+                    <label>CSS3</label>
+                  </div>
                 </div>
-                <div className="m-4  flex flex-col text-center items-center space-y-2">
-                  <img
-                    className=" w-auto h-20 justify-end"
-                    src={html1}
-                    alt="html5"
-                  />
-                  <label>HTML5</label>
+
+                <div className="flex items-center">
+                  <div className="m-4 flex flex-col text-center items-center space-y-2">
+                    <img
+                      className=" w-max h-auto sm:w-auto sm:h-20 justify-end"
+                      src={javascript}
+                      alt="javascript"
+                    />
+                    <label>JavaScript</label>
+                  </div>
+                  <div className="m-4 flex flex-col text-center items-center space-y-2">
+                    <img
+                      className=" w-max h-auto sm:w-auto sm:h-20 justify-end"
+                      src={java}
+                      alt="javascript"
+                    />
+                    <label>Java</label>
+                  </div>
+                  <div className="m-4 flex flex-col text-center items-center space-y-2">
+                    <img
+                      className=" w-max h-auto sm:w-auto sm:h-20 justify-end"
+                      src={tailwindcss}
+                      alt="tailwindcss"
+                    />
+
+                    <label>TailwindCSS</label>
+                  </div>
                 </div>
-                <div className="m-4 flex flex-col text-center items-center space-y-2">
-                  <img
-                    className=" w-auto h-20 justify-end"
-                    src={css3}
-                    alt="css3"
-                  />
-                  <label>CSS3</label>
-                </div>
-                <div className="m-4 flex flex-col text-center items-center space-y-2">
-                  <img
-                    className=" w-auto h-20 justify-end"
-                    src={javascript}
-                    alt="javascript"
-                  />
-                  <label>JavaScript</label>
-                </div>
-                <div className="m-4 flex flex-col text-center items-center space-y-2">
-                  <img
-                    className=" w-auto h-20 justify-end"
-                    src={java}
-                    alt="javascript"
-                  />
-                  <label>Java</label>
-                </div>
-                <div className="m-4 flex flex-col text-center items-center space-y-2">
-                  <img
-                    className=" w-auto h-20 justify-end"
-                    src={nodejs}
-                    alt="nodejs"
-                  />
-                  <label>Nodejs</label>
-                </div>
+
                 {/* <div className="m-4 flex flex-col text-center items-center space-y-2">
                   <i class="fab fa-react text-6xl text-gray-700 p-1 bg-slate-100 h-max w-max border-4 border-double border-gray-300 outline outline-offset-2 outline-[#6C63FF] rounded-full "></i>
                   <label>React</label>
                 </div> */}
               </div>
               {/* -----------2.2-------------- */}
-              <div className="m-4 flex  flex-auto justify-center">
-                <div className="m-4 flex flex-col text-center items-center space-y-2">
-                  <img
-                    className=" w-auto h-20 justify-end"
-                    src={tailwindcss}
-                    alt="tailwindcss"
-                  />
+              <div className="m-4  flex-auto sm:flex sm:flex-auto grid place-content-center  items-center">
+                <div className="flex items-center">
+                  <div className="m-4 flex flex-col text-center items-center space-y-2">
+                    <img
+                      className=" w-max h-auto sm:w-auto sm:h-20 justify-end"
+                      src={visualstudiocode}
+                      alt="visuals"
+                    />
+                    <label>Visual Studio Code</label>
+                  </div>
+                  <div className="m-4 flex flex-col text-center items-center space-y-2">
+                    <img
+                      className=" w-max h-auto sm:w-auto sm:h-20 justify-end"
+                      src={nodejs}
+                      alt="nodejs"
+                    />
+                    <label>Nodejs</label>
+                  </div>
+                  <div className="m-4 flex flex-col text-center items-center space-y-2">
+                    <img
+                      className=" w-max h-auto sm:w-auto sm:h-20 justify-end"
+                      src={mongodb}
+                      alt="mongodb"
+                    />
+                    <label>MongoDB</label>
+                  </div>
+                </div>
 
-                  <label>TailwindCSS</label>
-                </div>
-                <div className="m-4 flex flex-col text-center items-center space-y-2">
+                <div className="m-4 flex flex-col  text-center items-center space-y-2">
                   <img
-                    className=" w-auto h-20 justify-end"
-                    src={visualstudiocode}
-                    alt="visuals"
+                    className=" w-max h-auto sm:w-auto sm:h-20 justify-end"
+                    src={react}
+                    alt="react"
                   />
-                  <label>Visual Studio Code</label>
+                  <label>React</label>
                 </div>
-                <div className="m-4 flex flex-col text-center items-center space-y-2">
-                  <img
-                    className=" w-auto h-20 justify-end"
-                    src={giticon}
-                    alt="git"
-                  />
-                  <label>Git</label>
-                </div>
-                <div className="m-4 flex flex-col text-center items-center space-y-2">
-                  <img
-                    className=" w-auto h-20 justify-end"
-                    src={mongodb}
-                    alt="mongodb"
-                  />
-                  <label>MongoDB</label>
-                </div>
+
                 {/* <div className="m-4 flex flex-col text-center items-center space-y-2">
                   <i class="fab fa-react text-6xl text-gray-700 p-1 bg-slate-100 h-max w-max border-4 border-double border-gray-300 outline outline-offset-2 outline-[#6C63FF] rounded-full "></i>
                   <label>React</label>
@@ -331,7 +345,7 @@ const Index = () => {
               </div>
             </div>
             {/* -------------- code image----------- */}
-            <div className="flex ">
+            <div className="grid place-content-center ">
               <img
                 className=" w-auto h-72 justify-end"
                 src={dos}
