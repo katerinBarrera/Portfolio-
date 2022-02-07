@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="h-10 bg-[#c0a0c3] w-full flex items-center justify-center space-x-4 text-gray-900 text-lg p-8">
+    <div className="sm:h-10 bg-[#c0a0c3] w-full h-auto p-4  sm:flex items-center justify-center space-x-4 text-gray-900 text-lg sm:p-8">
       <div>
         <i class="fas fa-phone-alt"></i> +57 3015532120
       </div>
