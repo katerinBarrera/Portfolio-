@@ -22,6 +22,10 @@ import Typography from "@mui/material/Typography";
 import Dialog from "@mui/material/Dialog";
 import { useState } from "react";
 import Slide from "@mui/material/Slide";
+import gestion from "../images/gestion.png";
+import manufactura from "../images/manufactura.png";
+
+import Typed from "typed.js";
 
 const Index = () => {
   // contain function of projects and cards
@@ -100,12 +104,12 @@ const Index = () => {
             <CardMedia
               component="img"
               height="140"
-              image={montañas}
-              alt="montaña"
+              image={gestion}
+              alt="proyecto1"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Project 1
+                Sistema de gestión de proyectos
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Breve resumen del majestuoso proyecto <br />
@@ -132,12 +136,12 @@ const Index = () => {
             <CardMedia
               component="img"
               height="140"
-              image={montañas}
-              alt="montaña"
+              image={manufactura}
+              alt="proyecto2"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Project 2
+                Sistema de gestión
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Breve resumen del majestuoso proyecto <br />
@@ -203,6 +207,34 @@ const Index = () => {
     );
   };
 
+  // ---------------------------typed animation----------------------------------------
+  // Create reference to store the DOM element containing the animation
+  const el = React.useRef(null);
+  // Create reference to store the Typed instance itself
+  const typed = React.useRef(null);
+
+  React.useEffect(() => {
+    const options = {
+      strings: [
+        "o!",
+        "a!",
+        // "Ánimate a <strong>contratarme</strong>!",
+      ],
+      typeSpeed: 150,
+      backSpeed: 150,
+      loop: true,
+      loopCount: false,
+      backDelay: 440,
+    };
+    // elRef refers to the <span> rendered below
+    typed.current = new Typed(el.current, options);
+    return () => {
+      // Make sure to destroy Typed instance during cleanup
+      // to prevent memory leaks
+      typed.current.destroy();
+    };
+  }, []);
+  //--------------------finish typed animation---------------------------------------
   return (
     <div>
       <div>
@@ -219,10 +251,18 @@ const Index = () => {
               alt="welcome"
             />
           </div>
-          <div className="m-4 ">
-            <span className="text-gray-700 text-xl sm:text-3-xl lg:text-4xl font-extrabold">
-              HOLAAAAAAAAAAA SOY KATERINN <br /> AQUÍ PONGO LO SE ME DE LA
-              GANAAAA
+          <div className="m-4 box-border sm:w-[600px] p-4">
+            <span className="text-gray-700 text-xl sm:text-xl lg:text-3xl font-extrabold text-justify m-4">
+              !Bienvenid
+              <span style={{ whiteSpace: "pre" }} ref={el}></span> ;)
+            </span>
+            <br />
+            <span className="text-justify m-4 pt-3 text-xl">
+              Para mí es un placer que estés dispuesto a conocer mi trabajo. Te
+              cuento un poco de mí, tengo 20 años, soy tecnóloga, y resido en
+              Colombia. Poseo mucha motivación para desarrollar mis habilidades
+              y crecer profesionalmente. Échale un vistazo a mis redes, y a mis
+              proyectos prácticos, que poco a poco irán mejorando
             </span>
           </div>
         </div>
