@@ -63,7 +63,7 @@ const Header = () => {
             <button
               onClick={() => {
                 window.open(
-                  "mailto:katerinbarrera2001@gmail.com?Subject=Aquí%20el%20asunto%20del%20mail"
+                  "mailto:katerinbarrera2001@gmail.com?Subject=Quiero%20comunicarme%20contigo!%20-%20[nombre]"
                 );
               }}
               className="border-box h-max w-max "

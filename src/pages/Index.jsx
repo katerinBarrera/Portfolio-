@@ -14,18 +14,22 @@ import react from "../images/react.svg";
 import visualstudiocode from "../images/visualstudiocode.svg";
 import mongodb from "../images/mongodb.svg";
 import montañas from "../images/montañas.jpg";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import Dialog from "@mui/material/Dialog";
 import { useState } from "react";
 import Slide from "@mui/material/Slide";
 import gestion from "../images/gestion.png";
 import manufactura from "../images/manufactura.png";
-
+import CardComponent from "../components/CardComponent";
 import Typed from "typed.js";
+import Inicio from "../images/Inicio.png";
+import crearproyecto1 from "../images/crearproyecto1.png";
+import editarusuario1 from "../images/editarusuario1.png";
+import iniciosesion1 from "../images/iniciosesion1.png";
+import inscripciones from "../images/inscripciones.png";
+import listaproyectos1 from "../images/listaproyectos1.png";
+import usuariosproyecto1 from "../images/usuariosproyecto1.png";
+import Box from "@mui/material/Box";
+import { autocompleteClasses } from "@mui/material";
 
 const Index = () => {
   // contain function of projects and cards
@@ -37,7 +41,76 @@ const Index = () => {
     // contains all projects information
     const Projects = ({}) => {
       const Project1 = () => {
-        return <div>hola soy el primer proyecto</div>;
+        return (
+          <div className="p-10 flex flex-col items-center">
+            <span className="text-2xl font-semibold m-3 text-center">
+              Sistema de gestión de proyectos
+            </span>
+            <div className="flex flex-col">
+              <span>
+                La aplicación web fue desplegada en heroku, para la creación de
+                esta app se utilizaron diferentes tecnologías, tanto para el
+                aplicativo del frontend y del backend.
+              </span>
+              <label className="text-xl font-medium text-center m-2">
+                Vista de aplicación desde la web
+              </label>
+              <div className="">
+                <div className="grid place-content-center text-center space-y-2 text-lg font-medium">
+                  <img
+                    src={iniciosesion1}
+                    className=" w-auto h-auto sm:w-auto sm:h-auto  md:w-auto md:h-max lg:auto lg:h-auto text-center"
+                    alt="sesion"
+                  />
+                  <label>Inicio de sesión </label>
+                  <img
+                    src={Inicio}
+                    className=" w-auto h-auto sm:w-auto sm:h-auto  md:w-auto md:h-max lg:auto lg:h-auto text-center"
+                    alt="inicio"
+                  />
+                  <label>Página principal</label>
+                  <img
+                    src={inscripciones}
+                    className=" w-auto h-auto sm:w-auto sm:h-auto  md:w-auto md:h-max lg:auto lg:h-auto text-center"
+                    alt="inscripciones"
+                  />
+                  <label>Modulo de inscripciones</label>
+                  <img
+                    src={listaproyectos1}
+                    className=" w-auto h-auto sm:w-auto sm:h-auto  md:w-auto md:h-max lg:auto lg:h-auto text-center"
+                    alt="listaproyecto"
+                  />
+                  <label>Listado de proyectos</label>
+                  <img
+                    src={crearproyecto1}
+                    className=" w-auto h-auto sm:w-auto sm:h-auto  md:w-auto md:h-max lg:auto lg:h-auto text-center"
+                    alt="crearproyecto"
+                  />
+                  <label>Creación de proyectos </label>
+                  <img
+                    src={usuariosproyecto1}
+                    className=" w-auto h-auto sm:w-auto sm:h-auto  md:w-auto md:h-max lg:auto lg:h-auto text-center"
+                    alt="usuariosp"
+                  />
+                  <label>Listado de usuarios </label>
+                  <img
+                    src={editarusuario1}
+                    className=" w-auto h-auto sm:w-auto sm:h-auto  md:w-auto md:h-max lg:auto lg:h-auto text-center"
+                    alt="usuariosedi"
+                  />
+                  <label>Editar usuario </label>
+                  {/* <img
+                    src={Inicio}
+                    className=" m-4 w-[320px] h-auto sm:w-[350px] sm:h-auto  md:w-[450px] md:h-auto lg:w-[604px] lg:h-auto text-center"
+                    alt="welcome"
+                  />
+                  <label>Pagina principal</label> */}
+                </div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+        );
       };
       const Project2 = () => {
         return <div>hola soy el segundo proyecto</div>;
@@ -66,6 +139,8 @@ const Index = () => {
       const [showDialogProject1, setShowDialogProject1] = useState(false);
       // principal dialog
       const ProjectDialog = () => {
+        // const [fullWidth, setFullWidth] = React.useState(true);
+        // const [maxWidth, setMaxWidth] = React.useState("sm");
         const Transition = React.forwardRef(function Transition(props, ref) {
           return <Slide direction="up" ref={ref} {...props} />;
         });
@@ -90,112 +165,48 @@ const Index = () => {
             aria-describedby="alert-dialog-slide-description"
             TransitionComponent={Transition}
             keepMounted
+            fullWidth
+            maxWidth="lg"
           >
-            <div className="box-border h-max w-max  items-center ">
-              <Projects />
-            </div>
+            {/* <div className="box-border h-max w-max  items-center "> */}
+            <Projects />
+            {/* </div> */}
           </Dialog>
         );
       };
 
       return (
         <div className="sm:flex sm:place-content-around grid  place-content-center">
-          <Card sx={{ maxWidth: 345 }} className="my-8">
-            <CardMedia
-              component="img"
-              height="140"
-              image={gestion}
-              alt="proyecto1"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Sistema de gestión de proyectos
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Breve resumen del majestuoso proyecto <br />
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <button
-                className="text-m text-[#6950dbad] font-semibold m-4"
-                onClick={() => {
-                  //   setShowDialogProject1(true);
-                  setProject1(true);
-                }}
-              >
-                Leer más
-              </button>
-              <ProjectDialog />
-              {/* <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button> */}
-            </CardActions>
-          </Card>
-          <Card sx={{ maxWidth: 345 }} className="my-8">
-            <CardMedia
-              component="img"
-              height="140"
-              image={manufactura}
-              alt="proyecto2"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Sistema de gestión
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Breve resumen del majestuoso proyecto <br />
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <button
-                className="text-m text-[#6950dbad] font-semibold m-4"
-                onClick={() => {
-                  //   setShowDialogProject1(true);
-                  setProject2(true);
-                }}
-              >
-                Leer más
-              </button>
-              <ProjectDialog />
-              {/* <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button> */}
-            </CardActions>
-          </Card>
-          <Card sx={{ maxWidth: 345 }} className="my-8">
-            <CardMedia
-              component="img"
-              height="140"
-              image={montañas}
-              alt="montaña"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Project 3
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Breve resumen del majestuoso proyecto <br />
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <button
-                className="text-m text-[#6950dbad] font-semibold m-4"
-                onClick={() => {
-                  //   setShowDialogProject1(true);
-                  setProject3(true);
-                }}
-              >
-                Leer más
-              </button>
-              <ProjectDialog />
-              {/* <Button size="small">Share</Button>
-                <Button size="small">Learn More</Button> */}
-            </CardActions>
-          </Card>
+          <CardComponent
+            image={gestion}
+            imageName="proyecto1"
+            projectName="Sistema de gestión de proyectos"
+            resumeProject="Se propone plantear un modelo de sistema de información que soporte la gestión de proyectos de investigación de una universidad y mejore los procesos que posee, tales como las inscripciones a los proyectos, los avances de estos mismos, la creación de nuevos proyectos, entre otros... "
+            onClick={() => {
+              setProject1(true);
+            }}
+            nota="Nota: Proyecto realizado durante programa MINTIC2022"
+          />
+          <CardComponent
+            image={manufactura}
+            imageName="proyecto2"
+            projectName="Sistema de seguimiento de ventas"
+            resumeProject="Se propone analizar, diseñar y construir una aplicación de software que permita realizar el seguimiento de las ventas de un producto y/o servicio en una empresa"
+            onClick={() => {
+              setProject2(true);
+            }}
+            nota="Nota: Proyecto realizado durante programa MINTIC2022"
+          />
+          <CardComponent
+            image={montañas}
+            imageName="proyecto3"
+            projectName="Billetera"
+            resumeProject="Proyecto en proceso..."
+            onClick={() => {
+              setProject3(true);
+            }}
+          />
+          <ProjectDialog />
         </div>
       );
     };
